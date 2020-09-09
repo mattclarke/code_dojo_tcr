@@ -3,4 +3,4 @@ def fizz_buzz(input):
         return "fizz"
     elif input == 5:
         return "buzz"
-    return 1
+    return input
