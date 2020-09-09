@@ -4,7 +4,7 @@
 
 
 Create a virtual environment.
-Ignore if you already have a virtual environment configured or are using conda.
+Feel free to ignore if you already have a virtual environment configured or are using conda.
 ```
 python3 -m venv .venv
 . .venv/bin/activate
