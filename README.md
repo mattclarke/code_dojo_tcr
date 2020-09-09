@@ -30,12 +30,7 @@ def test_example_of_null_test():
 
 ### Running the tests
 ```
-pytest
-```
-
-or
-```
-pytest test_main.py
+pytest .
 ```
 
 ### Running the tests with coverage
