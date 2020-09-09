@@ -11,3 +11,8 @@ def test_example_of_null_test():
 
 def test_fizz_buzz_of_one():
     assert fizz_buzz(1) == 1
+
+
+def test_fizz_buzz_of_three():
+    assert fizz_buzz(3) == "fizz"
+    
