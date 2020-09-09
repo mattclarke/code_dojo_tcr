@@ -15,4 +15,8 @@ def test_fizz_buzz_of_one():
 
 def test_fizz_buzz_of_three():
     assert fizz_buzz(3) == "fizz"
+
+
+def test_fizz_buzz_of_five():
+    assert fizz_buzz(5) == "buzz"
     
