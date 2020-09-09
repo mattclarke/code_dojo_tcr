@@ -27,3 +27,7 @@ def test_fizz_buzz_of_two():
 
 def test_fizz_buzz_of_six():
     assert fizz_buzz(6) == "fizz"
+
+
+def test_fizz_buzz_of_ten():
+    assert fizz_buzz(10) == "buzz"
