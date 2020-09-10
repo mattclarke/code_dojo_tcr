@@ -15,6 +15,11 @@ python3 -m venv .venv
 python -m pip install -r requirements
 ```
 
+### Opening the project in VS Code
+```
+code .
+```
+
 ## Quick pytest primer
 
 ### Test examples
