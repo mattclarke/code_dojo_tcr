@@ -1,9 +1,14 @@
 # code_dojo_tcr
+```
+cd code_dojo_tcr
+```
 
 ## Setting up
 
 ### Create a virtual environment
-Feel free to ignore if you already have a virtual environment configured or are using conda or are used to doing your own thing.
+
+Optional - Conda users or people who are happy to use the system Python can skip this.
+
 ```
 python3 -m venv my_env
 . my_env/bin/activate
@@ -19,6 +24,8 @@ python -m pip install -r requirements.txt
 ```
 code .
 ```
+
+Check that the IDE has picked up the correct Python interpreter.
 
 ## Quick pytest primer
 
