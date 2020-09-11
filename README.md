@@ -20,6 +20,13 @@ python3 -m venv my_env
 python -m pip install -r requirements.txt
 ```
 
+### Check tests run
+
+```
+pytest .
+```
+
+
 ### Opening the project in VS Code
 ```
 code .
@@ -27,16 +34,11 @@ code .
 
 Check that the IDE has picked up the correct Python interpreter.
 
-### Check tests run
-```
-pytest .
-```
-
 
 ## Quick pytest primer
 
 ### Example tests
-Simple comparisons
+Simple comparisons:
 
 ```
 def test_example_of_an_equality_test():
