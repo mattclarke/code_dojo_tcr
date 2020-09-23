@@ -34,6 +34,9 @@ code .
 
 Check that the IDE has picked up the correct Python interpreter.
 
+## test && commit || revert
+[Kent Beck's original article](https://medium.com/@kentbeck_7670/test-commit-revert-870bbd756864)
+
 
 ## Quick pytest primer
 
