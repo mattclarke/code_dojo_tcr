@@ -8,7 +8,7 @@ class Game:
         self.purses = [0] * 6
         self.in_penalty_box = [0] * 6
 
-        self.pop_questions = list()
+        self.pop_questions = []
         self.science_questions = []
         self.sports_questions = []
         self.rock_questions = []
@@ -135,7 +135,7 @@ class Game:
 
         else:
 
-            print("Answer was corrent!!!!")
+            print("Answer was correct!!!!")
             self.purses[self.current_player] += 1
             print(
                 f"{self.players[self.current_player]} now has {self.purses[self.current_player]} Gold Coins."
