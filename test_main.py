@@ -1,5 +1,5 @@
 import subprocess
-from pytest_expect import expect
+import pytest_check as check
 
 
 def test_golden_master():
@@ -11,4 +11,4 @@ def test_golden_master():
     golden_master = golden_master.split("\n")
 
     for res, gold in zip(result, golden_master):
-        assert res == gold
+        check.equal(res, gold)
