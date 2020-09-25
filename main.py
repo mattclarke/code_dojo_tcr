@@ -188,10 +188,22 @@ if __name__ == "__main__":
     game.add("Pat")
     game.add("Sue")
 
-    while True:
-        game.roll(randrange(5) + 1)
+    fixed_dice_rolls = [4, 1, 2, 2, 1, 1, 3, 5, 3, 1, 5, 2, 1, 1, 1, 2, 3]
+    dice_ans = [3, 2, 2, 2, 1, 2, 4, 6, 3, 8, 4, 6, 8, 5, 2, 4]
 
-        if randrange(9) == 7:
+    while True:
+        if False:
+            number_rolled = randrange(5) + 1
+        else:
+            number_rolled = fixed_dice_rolls.pop(0)
+
+        game.roll(number_rolled)
+
+        if False:
+            is_correct = randrange(9)
+        else:
+            is_correct = dice_ans.pop(0)
+        if is_correct == 7:
             not_a_winner = game.wrong_answer()
         else:
             not_a_winner = game.was_correctly_answered()
