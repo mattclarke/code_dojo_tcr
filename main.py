@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+from random import randrange
 
 
 class Game:
@@ -17,13 +17,10 @@ class Game:
         self.is_getting_out_of_penalty_box = False
 
         for i in range(50):
-            self.pop_questions.append("Pop Question %s" % i)
-            self.science_questions.append("Science Question %s" % i)
-            self.sports_questions.append("Sports Question %s" % i)
-            self.rock_questions.append(self.create_rock_question(i))
-
-    def create_rock_question(self, index):
-        return "Rock Question %s" % index
+            self.pop_questions.append(f"Pop Question {i}")
+            self.science_questions.append(f"Science Question {i}")
+            self.sports_questions.append(f"Sports Question {i}")
+            self.rock_questions.append(f"Rock Question {i}")
 
     def is_playable(self):
         return self.how_many_players >= 2
@@ -34,8 +31,8 @@ class Game:
         self.purses[self.how_many_players] = 0
         self.in_penalty_box[self.how_many_players] = False
 
-        print(player_name + " was added")
-        print("They are player number %s" % len(self.players))
+        print(f"{player_name} was added")
+        print(f"They are player number {len(self.players)}")
 
         return True
 
@@ -44,16 +41,15 @@ class Game:
         return len(self.players)
 
     def roll(self, roll):
-        print("%s is the current player" % self.players[self.current_player])
-        print("They have rolled a %s" % roll)
+        print(f"{self.players[self.current_player]} is the current player")
+        print(f"They have rolled a {roll}")
 
         if self.in_penalty_box[self.current_player]:
             if roll % 2 != 0:
                 self.is_getting_out_of_penalty_box = True
 
                 print(
-                    "%s is getting out of the penalty box"
-                    % self.players[self.current_player]
+                    f"{self.players[self.current_player]} is getting out of the penalty box"
                 )
                 self.places[self.current_player] = (
                     self.places[self.current_player] + roll
@@ -64,16 +60,13 @@ class Game:
                     )
 
                 print(
-                    self.players[self.current_player]
-                    + "'s new location is "
-                    + str(self.places[self.current_player])
+                    f"{self.players[self.current_player]}'s new location is {self.places[self.current_player]}"
                 )
-                print("The category is %s" % self._current_category)
+                print(f"The category is {self._current_category}")
                 self._ask_question()
             else:
                 print(
-                    "%s is not getting out of the penalty box"
-                    % self.players[self.current_player]
+                    f"{self.players[self.current_player]} is not getting out of the penalty box"
                 )
                 self.is_getting_out_of_penalty_box = False
         else:
@@ -82,9 +75,7 @@ class Game:
                 self.places[self.current_player] = self.places[self.current_player] - 12
 
             print(
-                self.players[self.current_player]
-                + "'s new location is "
-                + str(self.places[self.current_player])
+                f"{self.players[self.current_player]}'s new location is {self.places[self.current_player]}"
             )
             print(f"The category is {self._current_category}")
             self._ask_question()
@@ -127,10 +118,7 @@ class Game:
                 print("Answer was correct!!!!")
                 self.purses[self.current_player] += 1
                 print(
-                    self.players[self.current_player]
-                    + " now has "
-                    + str(self.purses[self.current_player])
-                    + " Gold Coins."
+                    f"{self.players[self.current_player]} now has {self.purses[self.current_player]} Gold Coins."
                 )
 
                 winner = self._did_player_win()
@@ -150,10 +138,7 @@ class Game:
             print("Answer was corrent!!!!")
             self.purses[self.current_player] += 1
             print(
-                self.players[self.current_player]
-                + " now has "
-                + str(self.purses[self.current_player])
-                + " Gold Coins."
+                f"{self.players[self.current_player]} now has {self.purses[self.current_player]} Gold Coins."
             )
 
             winner = self._did_player_win()
@@ -165,7 +150,7 @@ class Game:
 
     def wrong_answer(self):
         print("Question was incorrectly answered")
-        print(self.players[self.current_player] + " was sent to the penalty box")
+        print(f"{self.players[self.current_player]} was sent to the penalty box")
         self.in_penalty_box[self.current_player] = True
 
         self.current_player += 1
@@ -176,8 +161,6 @@ class Game:
     def _did_player_win(self):
         return not (self.purses[self.current_player] == 6)
 
-
-from random import randrange
 
 if __name__ == "__main__":
     not_a_winner = False
